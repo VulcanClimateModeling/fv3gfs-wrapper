@@ -11,7 +11,7 @@ all: $(CASES) nudging fortran_state baroclinic
 public_examples: $(CASES) fortran_state baroclinic
 
 fv3run:
-	fv3run --runfile $(RUNFILE) --dockerimage $(DOCKER_IMAGE) $(CONFIG) $(OUTDIR)
+	fv3run --runfile $(RUNFILE)  $(CONFIG) $(OUTDIR)
 
 $(CASES): %:
 	RUNFILE=$@.py OUTDIR=$@_outdir $(MAKE) fv3run
